@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Technician Checklist">
+        <div class="slds-p-around_medium">
+            <lightning-input
+            type="checklist"
+            label="Safety Check Completed"
+            name="safetyCheck"
+            checked={safetyCheck}
+            onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-input
+            type="checklist"
+            label="Equipment Inspected"
+            name="equipmentCheck"
+            checked={equipmentCheck}
+            onchange={handleChange}>
+            </lightning-input>
+            
+            <lightning-input
+            type="checklist"
+            label="Meter Reading Verified"
+            name="meterCheck"
+            checked={meterCheck}
+            onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-textarea
+               label="Remarks"
+               name="remarks"
+               onchange={handleChange}
+            ></lightning-textarea>
+
+            <lightning-button
+               label="submit"
+               variant="brand"
+               onclick={handleSubmit}
+            ></lightning-button>
+
+        </div>
+    </lightning-card>
+    
+</template>

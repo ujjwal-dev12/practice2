@@ -1,0 +1,36 @@
+<template>
+    <lightning-card
+    title="Gas Meter Online"
+    >
+    <div class="slds-p-around_medium">
+        <lightning-input
+        label="meter number"
+        value={meterNumber}
+        onchange={handleMeterChange}
+        >
+        </lightning-input>
+        <lightning-input
+        label="number"
+        value={meterReading}
+        onchange={handleReadingChange}
+        >
+        </lightning-input>
+
+        <div class="slds-m-top_medium">
+            <lightning-button
+            label="Save Meter"
+            variant="brand"
+            onclick={handleSave}
+            >
+            </lightning-button>
+            
+            <lightning-button
+            class="slds-m-left_small"
+            label="Host Validation"
+            onclick={handleHostValidation}
+            >
+            </lightning-button>
+        </div>
+    </div>
+</lightning-card>    
+</template>

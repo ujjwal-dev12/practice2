@@ -1,0 +1,60 @@
+<template>
+    <lightning-card title="Gas Completion">
+        <div class="slds-p-around_medium">
+
+            <!-- Network status -->
+
+            <template lwc:if={isOnline} >
+                <p>
+             Network Status:Online
+                </p>
+            </template>
+            <template lwc:else>
+             Network Status:Offline
+            </template>
+         <!-- Child-1 Checklist -->
+          <template lwc:if={showChecklist}>
+            <c-technician-checklistfinal
+            record-id = {recordId}
+            is-online={isOnline}
+            onformcomplete={handleFormComplete}
+            >
+            </c-technician-checklistfinal>
+          </template>
+
+           <!-- Child-2 Gas Meter -->
+          <template lwc:if={showGasMeter}>
+            <c-gas-meter-form
+            record-id = {recordId}
+            is-online={isOnline}
+            onformcomplete={handleFormComplete}
+            >
+            </c-gas-meter-form>
+          </template>
+          
+          <!-- File Upload -->
+           <div class="slds-m-top_medium">
+            <lightning-file-upload
+            label="Upload photos"
+            record-id={recordId}
+            accept={acceptedFormats}
+            multiple
+            disabled={isOffline}
+            onuploadfinished={handleUploadFinished}
+            >
+            </lightning-file-upload>
+           </div>
+
+           <!-- Save And Complete -->
+            <div class="slds-m-top_medium">
+                <lightning-button
+                label="Save and complete"
+                variant="brand"
+                disabled={isSaveCompleteDisabled}
+                onclick={handleSaveComplete}
+                >
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

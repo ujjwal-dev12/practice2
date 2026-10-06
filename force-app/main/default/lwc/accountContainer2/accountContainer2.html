@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Account Container">
+       <c-contact-selector
+       oncontactselect = {handleContactSelect}
+       ></c-contact-selector>
+       <template lwc:if={selectedContactName}>
+        <p>Selected Contact :{selectedContactName}</p>
+       </template>
+    </lightning-card>
+</template>

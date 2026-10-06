@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="GAS Completion Form">
+        <div class="slds-p-around_medium">
+            <template if:true={showChecklist}>
+            <c-technician-checklist
+            record-id={recordId}
+            onformcomplete={handleFormComplete}></c-technician-checklist>
+            </template>
+        </div>
+    </lightning-card>
+</template>
